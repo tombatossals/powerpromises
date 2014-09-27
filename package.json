@@ -1,0 +1,26 @@
+{
+  "name": "powerpromises",
+  "version": "0.0.1",
+  "description": "Easy use of Q promises",
+  "main": "powerpromises.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tombatossals/powerpromises.git"
+  },
+  "keywords": [
+    "promises",
+    "nodejs"
+  ],
+  "author": "David Rubert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tombatossals/powerpromises/issues"
+  },
+  "homepage": "https://github.com/tombatossals/powerpromises"
+}
