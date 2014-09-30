@@ -1,6 +1,6 @@
 {
   "name": "powerpromises",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Easy use of Q promises",
   "main": "powerpromises.js",
   "directories": {
