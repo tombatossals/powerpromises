@@ -24,4 +24,4 @@ var arrayOfNumbers = function() {
     return arr;
 };
 
-pw.chainPromises(waitFn, arrayOfNumbers(), 5);
+pw.chainPromises(waitFn, arrayOfNumbers(), PARALLEL);

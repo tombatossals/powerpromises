@@ -96,7 +96,7 @@ var arrayOfNumbers = function() {
     return arr;
 };
 
-pw.chainPromises(waitFn, arrayOfNumbers(), 5);
+pw.chainPromises(waitFn, arrayOfNumbers(), PARALLEL);
 ```
 
 ##Sequential execution with limited grouped calls in parallel and error management
@@ -133,7 +133,7 @@ var arrayOfNumbers = function() {
     return arr;
 };
 
-pw.chainPromises(waitFn, arrayOfNumbers(), 5).then(function(results) {
+pw.chainPromises(waitFn, arrayOfNumbers(), PARALLEL).then(function(results) {
     console.log(results);
 });
 ```
