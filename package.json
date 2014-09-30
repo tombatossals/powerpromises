@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/tombatossals/powerpromises/issues"
   },
-  "homepage": "https://github.com/tombatossals/powerpromises"
+  "homepage": "https://github.com/tombatossals/powerpromises",
+  "dependencies": {
+    "q": "^1.0.1"
+  }
 }
