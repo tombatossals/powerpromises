@@ -28,9 +28,7 @@ var chainSerialPromises = function(fn, arrayOfArguments) {
         return previous.then(function(partialResults) {
             for (var i in partialResults) {
                 var p = partialResults[i];
-                if (p.state === 'fulfilled') {
-                    results.push(p.value);
-                }
+                results.push(p);
             }
             return parallelPromises(fn, item);
         });
@@ -39,9 +37,7 @@ var chainSerialPromises = function(fn, arrayOfArguments) {
     promises.then(function(partialResults) {
         for (var i in partialResults) {
             var p = partialResults[i];
-            if (p.state === 'fulfilled') {
-                results.push(p.value);
-            }
+            results.push(p);
         }
         df.resolve(results);
     });
@@ -52,9 +48,16 @@ var chainSerialPromises = function(fn, arrayOfArguments) {
 var chainPromises = function(fn, arrayOfArguments, maxParallel) {
     var df = Q.defer();
     var blocks = [];
-    for (var i=0; i<arrayOfArguments.length; i+=maxParallel) {
-        var chunk = arrayOfArguments.slice(i, i+maxParallel);
-        blocks.push(chunk);
+
+    if (maxParallel) {
+        for (var i=0; i<arrayOfArguments.length; i+=maxParallel) {
+            var chunk = arrayOfArguments.slice(i, i+maxParallel);
+            blocks.push(chunk);
+        }
+    } else {
+	if (arrayOfArguments && arrayOfArguments.length > 0) {
+            blocks.push(arrayOfArguments.slice(0));
+        }
     }
 
     return chainSerialPromises(fn, blocks);  
